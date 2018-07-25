@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { Belief } from './belief';
 import { Staff } from './staff';
@@ -14,12 +15,12 @@ export class AboutService {
 
   getBeliefs() : Observable<Belief[]> {
     return this.http.get('/belief')
-      .map( (response) => <Belief[]> response.json());
+      .pipe(map( (response) => <Belief[]> response.json()));
   }
 
   getStaff() : Observable<Staff[]> {
     return this.http.get('/staff')
-      .map ( (response) => <Staff[]> response.json());
+      .pipe(map ( (response) => <Staff[]> response.json()));
   }
 
 }

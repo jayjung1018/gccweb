@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, OnChanges, Inject, ElementRef } from '@angular/core';
-import { PageScrollConfig, PageScrollService, PageScrollInstance, EasingLogic } from 'ng2-page-scroll';
+import { PageScrollConfig, PageScrollService, PageScrollInstance, EasingLogic } from 'ngx-page-scroll';
 import { DOCUMENT } from '@angular/platform-browser';
 
 import { Ministry } from '../../ministry';
@@ -17,7 +17,7 @@ export class InfoComponent implements OnInit, OnChanges {
   myEasing : EasingLogic = {
     ease : (t: number, b: number, c: number, d: number): number => {
       t /= d;
-      return -c * t*(t-2) + b;  
+      return -c * t*(t-2) + b;
     }
   }
 
